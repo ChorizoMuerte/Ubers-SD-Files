@@ -13,7 +13,7 @@ import threading
 PORT = 8080
 OLLAMA = "http://localhost:11434"
 
-HTML = b"""<!DOCTYPE html>
+HTML = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -378,7 +378,7 @@ clearBtn.onclick = () => {
 </script>
 </body>
 </html>
-"""
+""".encode('utf-8')
 
 
 class ChatHandler(BaseHTTPRequestHandler):
