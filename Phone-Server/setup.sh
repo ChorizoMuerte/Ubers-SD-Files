@@ -98,7 +98,8 @@ VAULT="$HOME/storage/shared/Documents/Second Brain/Termux"
 if [ -d "$HOME/storage/shared/Documents/Second Brain" ]; then
     mkdir -p "$VAULT"
     cp "$HOME/Phone-Server/S20-AI-Node-Cheatsheet.md" "$VAULT/S20-AI-Node-Cheatsheet.md"
-    log "Cheat sheet copied to Obsidian vault → Termux/S20-AI-Node-Cheatsheet.md"
+    cp "$HOME/Phone-Server/S20-AI-Node-Overview.md" "$VAULT/S20-AI-Node-Overview.md"
+    log "Notes copied to Obsidian vault → Termux/"
 else
     warn "Obsidian vault not found at ~/storage/shared/Documents/Second Brain"
     warn "Run: termux-setup-storage  then re-run this script, or copy manually:"
