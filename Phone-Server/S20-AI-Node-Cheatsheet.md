@@ -4,7 +4,8 @@
 ```bash
 git clone https://github.com/ChorizoMuerte/Ubers-SD-Files ~/Ubers-SD-Files
 cp -r ~/Ubers-SD-Files/Phone-Server ~/Phone-Server
-bash ~/Phone-Server/setup.sh
+pkg install python -y
+bash ~/Phone-Server/start.sh
 ```
 
 > Install **Termux:Boot** and **Termux:API** from F-Droid for auto-start and full functionality.

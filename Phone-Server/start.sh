@@ -35,10 +35,10 @@ tmux send-keys -t "$SESSION:ollama" \
 
 sleep 2  # Let Ollama initialize
 
-# ── Window 2: Open WebUI ──────────────────────────────────────
+# ── Window 2: Chat UI ─────────────────────────────────────────
 tmux new-window -t "$SESSION" -n "webui"
 tmux send-keys -t "$SESSION:webui" \
-    "source $HOME/ai-env/bin/activate && echo '[+] Starting Open WebUI on port $WEBUI_PORT...' && open-webui serve --port $WEBUI_PORT" Enter
+    "echo '[+] Starting Chat UI on port $WEBUI_PORT...' && python $HOME/Phone-Server/chat-ui/server.py" Enter
 
 # ── Window 3: Auth watcher ────────────────────────────────────
 if [ -f "$HOME/Phone-Server/security/watch-auth.sh" ]; then
