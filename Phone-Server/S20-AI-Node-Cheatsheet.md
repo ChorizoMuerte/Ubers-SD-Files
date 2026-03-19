@@ -57,14 +57,25 @@ bash ~/Phone-Server/stop.sh
 
 ---
 
-## Endpoints (replace with your phone's local IP)
-| Service    | URL                          |
-|------------|------------------------------|
-| Ollama API | `http://<phone-ip>:11434`    |
-| Open WebUI | `http://<phone-ip>:8080`     |
-| SSH        | `ssh -p 8022 u0_a0@<phone-ip>` |
+## Endpoints
 
-Find your IP:
+### Tailscale (works from anywhere — no VPN setup needed)
+| Service    | URL                                        |
+|------------|--------------------------------------------|
+| Ollama API | `http://100.70.218.84:11434`               |
+| Open WebUI | `http://100.70.218.84:8080`                |
+| SSH        | `ssh -p 8022 u0_a277@100.70.218.84`        |
+
+> Tailscale must be **ON** on the phone (Tailscale app toggled Connected).
+
+### Local Network (same WiFi only)
+| Service    | URL                            |
+|------------|--------------------------------|
+| Ollama API | `http://<phone-local-ip>:11434` |
+| Open WebUI | `http://<phone-local-ip>:8080`  |
+| SSH        | `ssh -p 8022 u0_a277@<phone-local-ip>` |
+
+Find local IP:
 ```bash
 ip route get 1.1.1.1 | grep -oP 'src \K\S+'
 ```
