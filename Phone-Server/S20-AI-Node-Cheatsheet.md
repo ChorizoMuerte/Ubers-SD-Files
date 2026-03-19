@@ -14,8 +14,9 @@ bash ~/Phone-Server/start.sh
 
 ## Daily Start (or auto on reboot via Termux:Boot)
 ```bash
-bash ~/Phone-Server/start.sh
+launch-server
 ```
+> If the alias isn't recognized yet, run `source ~/.bashrc` once, or just use `bash ~/Phone-Server/start.sh`
 
 ---
 

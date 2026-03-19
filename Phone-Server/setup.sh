@@ -75,7 +75,13 @@ mkdir -p "$HOME/.termux/boot"
 cp "$HOME/Phone-Server/start.sh" "$HOME/.termux/boot/start-services.sh"
 chmod +x "$HOME/.termux/boot/start-services.sh"
 
-# ── 7. Environment config ─────────────────────────────────────
+# ── 7. Shell alias ────────────────────────────────────────────
+log "Adding 'launch-server' alias..."
+if ! grep -q "launch-server" "$HOME/.bashrc" 2>/dev/null; then
+    echo "alias launch-server='bash ~/Phone-Server/start.sh'" >> "$HOME/.bashrc"
+fi
+
+# ── 8. Environment config ─────────────────────────────────────
 log "Writing environment config..."
 cat > "$HOME/.ai-node.env" <<EOF
 # AI Node Environment Config
