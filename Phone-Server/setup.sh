@@ -87,6 +87,18 @@ SSH_PORT=8022
 WIREGUARD_PORT=51820
 EOF
 
+# ── 8. Copy cheat sheet to Obsidian vault ─────────────────────
+VAULT="$HOME/storage/shared/Documents/Second Brain/Termux"
+if [ -d "$HOME/storage/shared/Documents/Second Brain" ]; then
+    mkdir -p "$VAULT"
+    cp "$HOME/Phone-Server/S20-AI-Node-Cheatsheet.md" "$VAULT/S20-AI-Node-Cheatsheet.md"
+    log "Cheat sheet copied to Obsidian vault → Termux/S20-AI-Node-Cheatsheet.md"
+else
+    warn "Obsidian vault not found at ~/storage/shared/Documents/Second Brain"
+    warn "Run: termux-setup-storage  then re-run this script, or copy manually:"
+    warn "  cp ~/Phone-Server/S20-AI-Node-Cheatsheet.md \"/storage/emulated/0/Documents/Second Brain/Termux/\""
+fi
+
 echo ""
 log "Base setup complete!"
 echo ""
