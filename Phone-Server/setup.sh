@@ -80,6 +80,7 @@ log "Writing environment config..."
 cat > "$HOME/.ai-node.env" <<EOF
 # AI Node Environment Config
 OLLAMA_HOST=0.0.0.0
+OLLAMA_ORIGINS=app://obsidian.md*
 OLLAMA_PORT=11434
 WEBUI_PORT=8080
 SSH_PORT=8022

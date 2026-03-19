@@ -31,7 +31,7 @@ tmux send-keys -t "$SESSION:ssh" "echo '[+] Starting SSH server...' && sshd && e
 # ── Window 1: Ollama ──────────────────────────────────────────
 tmux new-window -t "$SESSION" -n "ollama"
 tmux send-keys -t "$SESSION:ollama" \
-    "echo '[+] Starting Ollama on port $OLLAMA_PORT...' && OLLAMA_HOST=0.0.0.0 ollama serve" Enter
+    "echo '[+] Starting Ollama on port $OLLAMA_PORT...' && OLLAMA_HOST=0.0.0.0 OLLAMA_ORIGINS=\"app://obsidian.md*\" ollama serve" Enter
 
 sleep 2  # Let Ollama initialize
 
